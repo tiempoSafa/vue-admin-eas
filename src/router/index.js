@@ -104,7 +104,7 @@ export const constantRouterMap = [
     children: [
       {
         path: 'list',
-        name: '课程分类列表', 
+        name: '课程分类列表',
         component: () => import('@/views/edu/subject/list'),
         meta: { title: '课程分类列表', icon: 'table' }
       },
@@ -126,7 +126,7 @@ export const constantRouterMap = [
     children: [
       {
         path: 'list',
-        name: '课表列表', 
+        name: '课表列表',
         component: () => import('@/views/edu/classSchedule/list'),
         meta: { title: '课表列表', icon: 'table' }
       },
@@ -148,7 +148,7 @@ export const constantRouterMap = [
     children: [
       {
         path: 'list',
-        name: '课程列表', 
+        name: '课程列表',
         component: () => import('@/views/edu/course/list'),
         meta: { title: '课程列表', icon: 'table' }
       },
@@ -178,6 +178,28 @@ export const constantRouterMap = [
         component: () => import('@/views/edu/course/publish'),
         meta: { title: '发布课程', noCache: true },
         hidden: true
+      }
+    ]
+  },
+
+  {
+    path: '/file',
+    component: Layout,
+    redirect: '/file/table',
+    name: '文件管理',
+    meta: { title: '文件管理', icon: 'example' },
+    children: [
+      {
+        path: 'table',
+        name: '文件列表',
+        component: () => import('@/views/edu/file/list'),
+        meta: { title: '文件列表', icon: 'table' }
+      },
+      {
+        path: 'save',
+        name: '上传文件',
+        component: () => import('@/views/edu/file/save'),
+        meta: { title: '上传文件', icon: 'tree' }
       }
     ]
   },
